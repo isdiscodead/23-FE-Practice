@@ -24,20 +24,43 @@
             /* flex-direction, flex-wrap */
             flex-direction: row;
             flex-wrap: wrap;
-            flex-flow: row-reverse wrap; /* 한 번에 지정 가능 */
+            flex-flow: row wrap; /* 한 번에 지정 가능 */
 
             border: 5px solid salmon;
+            /*
             justify-content: space-between;
-
             align-items: center;
             align-content: space-around;
+            */
         }
 
         li:first-child {
-            align-self: flex-end;
+            /* align-self: flex-end; */
         }
 
+        li {
+            background-color: antiquewhite;
+        }
 
+        li:nth-child(2n) {
+            background-color: coral;
+        }
+
+        li:nth-child(2) {
+            flex-grow: 1;
+        }
+
+        li:nth-child(3) {
+            flex-grow: 2;
+        }
+
+        li:nth-child(5) {
+            flex-shrink: 1;
+        }
+
+        li:nth-child(6) {
+            flex-shrink: 2;
+        }
     </style>
 </head>
 <body>
