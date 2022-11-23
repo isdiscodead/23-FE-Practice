@@ -47,19 +47,23 @@
         }
 
         li:nth-child(2) {
-            flex-grow: 1;
+            flex-basis: 100px;
+            /* flex-grow: 1; */
         }
 
         li:nth-child(3) {
-            flex-grow: 2;
+            flex-basis: 200px;
+            /* flex-grow: 2; */
+            flex-shrink: 3;
         }
 
         li:nth-child(5) {
-            flex-shrink: 1;
+            flex: 0 0 200px;
         }
 
         li:nth-child(6) {
             flex-shrink: 2;
+            flex-grow: 1;
         }
     </style>
 </head>
