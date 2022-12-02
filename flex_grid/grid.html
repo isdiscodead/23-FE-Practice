@@ -35,9 +35,9 @@
             height: 500px;
 
             /* 크기 지정하는 만큼 개수 ... */
-            grid-template-columns: 100px 200px 300px;
-            grid-template-rows: 30% 50%;
-
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+ 
             gap: 10px;
         }
     </style>
