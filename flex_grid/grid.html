@@ -35,11 +35,30 @@
             height: 500px;
 
             /* 크기 지정하는 만큼 개수 ... */
-            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            /*
+			grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
             grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
- 
+ 			*/
+			
+			grid-template-columns : repeat(2, 1fr);
+			grid-template-rows : repeat(3,1fr);
             gap: 10px;
         }
+		
+		li:nth-child(1) {
+			/* 각각 1부터 3까지, 1부터 2까지 줄번호에 위치 
+			grid-row : 1 / 3; 
+			grid-column : 1 / 2;
+			*/
+		}
+		
+		li:nth-child(2) {
+			/* 세부 속성 사용 */
+			grid-row-start : 1;
+			grid-row-end : 3;
+			grid-column-start : 2;
+			grid-column-end: 4;
+		}
     </style>
 </head>
 <body>
@@ -49,6 +68,7 @@
         <li class="item">3</li>
         <li class="item">4</li>
         <li class="item">5</li>
+		<li class="item">6</li>
     </ul>
 </body>
 </html>
