@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grid Layout 2</title>
+    <title>Grid Layout : Grid Area</title>
 
     <style>
         * {
@@ -18,7 +18,22 @@
         container {
             display : grid;
             height: 500px;
+            
+            grid-template-columns : repeat(3, 1fr)
+            
+            /* area 이름을 토대로 레이아웃 설정 */
+            grid-template-areas : 
+                "a a a"
+                "b b ."
+                "c c e";
         }
+        
+        li:nth-child(1) { grid-area : a; }
+        li:nth-child(2) { grid-area : b; }
+        li:nth-child(3) { grid-area : c; }
+        li:nth-child(4) { grid-area : d; }
+        li:nth-child(5) { grid-area : e; }
+        li:nth-child(6) { grid-area : f; }
     </style>
 </head>
 <body>
