@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout : align & justify </title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+        
+        ul {
+            padding: 0;
+            list-style-type: none;
+            border: 5px solid teal;
+        }
+
+        container {
+            display : grid;
+            height: 500px;
+            
+            grid-template-columns : repeat(3, 1fr);
+            grid-template-rows : repeat(2,1fr);
+            
+            /* area 이름을 토대로 레이아웃 설정 
+            grid-template-areas : 
+                "a a a"
+                "b b ."
+                "c c e";
+            */
+            
+            align-items: start;
+            justify-items: center;
+        }
+        
+        li:nth-child(1) { grid-area : a; }
+        li:nth-child(2) { grid-area : b; }
+        li:nth-child(3) { grid-area : c; }
+        li:nth-child(4) { grid-area : d; justify-self: end; }
+        li:nth-child(5) { grid-area : e; align-self: center; }
+    </style>
+</head>
+<body>
+    <ul class="container">
+        <li class="item">1</li>
+        <li class="item">2</li>
+        <li class="item">3</li>
+        <li class="item">4</li>
+        <li class="item">5</li>
+    </ul>
+</body>
+</html>
