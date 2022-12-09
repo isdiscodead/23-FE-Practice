@@ -20,30 +20,23 @@
             list-style-type: none;
             border: 5px solid teal;
         }
+        
+        li {
+            background: pink;
+            border: 3px solid salmon;
+        }
 
         container {
             display : grid;
             height: 500px;
             
-            grid-template-columns : repeat(3, 1fr);
-            grid-template-rows : repeat(2,1fr);
+            grid-template-columns : repeat(3, 100px);
+            grid-template-rows : repeat(2,100px);
             
-            /* area 이름을 토대로 레이아웃 설정 
-            grid-template-areas : 
-                "a a a"
-                "b b ."
-                "c c e";
-            */
-            
-            align-items: start;
-            justify-items: center;
+            align-content : space-between;
+            justify-content : center;
         }
         
-        li:nth-child(1) { grid-area : a; }
-        li:nth-child(2) { grid-area : b; }
-        li:nth-child(3) { grid-area : c; }
-        li:nth-child(4) { grid-area : d; justify-self: end; }
-        li:nth-child(5) { grid-area : e; align-self: center; }
     </style>
 </head>
 <body>
