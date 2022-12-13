@@ -6,16 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>em & rem</title>
 	
-	<style>
+	<style>		
+		.outer {
+			font-size: 24px; /* 상속됨 */
+		}
+		
 		.inner {
 			display: inline-block;
 			width: 200px;
 			height: 200px;
 			background-color: tomato;
-		}
-		
-		.outer {
-			font-size: 24px; /* 상속됨 */
+			
+			/* font-size: 2em; */
+			font-size: 2rem;
 		}
 	</style>
 </head>
