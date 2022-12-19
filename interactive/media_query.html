@@ -6,7 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>media query</title>
 	
+	
+	<!-- <link rel="stylesheet" href="style.css" media="screen and (max-width: 768px)"> -->
+
 	<style>		
+	
+		/*
+		import 해서 사용하는 방법
+		@import url("style.css") screen and (max=width: 768px);
+		*/
+		
 		img {
 			width: 200px;
 			height: 200px;
@@ -19,6 +28,8 @@
 			}
 		}
 		
+		/* 다중으로 사용 가능 ! */
+		/* max-width의 경우 이런 식으로 주면 가장 마지막만 적용됨 */
 		@media screen and (min-width: 1200px) {
 			img {
 				width: 800px;
