@@ -36,10 +36,28 @@
 				height: 800px;
 			}
 		}
+		
+		/* 가변 이미지 1번 방법 max-width */
+		div {
+			width: 50%;
+		}
+		img {
+			/* max-width: 640px; 너비 제한 두기 */
+			max-width: 100%; /* div에 맞춰 늘리기 */
+		}
 	</style>
 </head>
 	
 <body>
-	<img src="https://picsum.photos/400/400"> 
+	<div>
+		<img src="https://picsum.photos/400/400"> 
+	</div>
+
+	<picture>
+		<source srcset="https://picsum.photos/800/800" media="(min-width: 800px)">
+		<!-- 기본으로 보여줄 이미지는 img 태그 사용 -->
+		<img src="https://picsum.photos/400/400">
+		
+	</picture>
 </body>
 </html>
