@@ -45,6 +45,11 @@
 			/* max-width: 640px; 너비 제한 두기 */
 			max-width: 100%; /* div에 맞춰 늘리기 */
 		}
+		
+		/* 가변 동영상 */
+		video {
+			width: 100%;
+		}
 	</style>
 </head>
 	
@@ -58,7 +63,15 @@
 		<source srcset="https://picsum.photos/1200/800" media="(min-width: 1200px)">
 		<!-- 기본으로 보여줄 이미지는 img 태그 사용 -->
 		<img src="https://picsum.photos/400/400">
-		
 	</picture>
+	
+	<video src="./videos/cat.mp4" controls></video> <!-- 원본 사이즈 그대로 출력됨 -->
+	
+	<!-- 비디오 소스 파일을 가지고 있는 경우엔 어떻게 해도 문제 X -->
+	<video>
+		<source srcset="" media="">
+	</video>
+	
+	<!-- -->
 </body>
 </html>
