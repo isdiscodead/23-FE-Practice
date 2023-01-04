@@ -1,0 +1,17 @@
+.header {
+	position: fixed; /* 스크롤 해도 보이도록 */
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: white;
+	box-shadow: 0 0 3px black;
+	z-index: 20; /* 상대적으로 높은 위치 */
+}
+
+.header-wrapper {
+	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 16px;
+}

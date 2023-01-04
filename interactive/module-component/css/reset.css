@@ -46,3 +46,9 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+/* reset css 추가 */
+* {
+	box-sizing: border-box; /* padding 등이 커지더라도 width 고정 */
+	outline: none;
+}
