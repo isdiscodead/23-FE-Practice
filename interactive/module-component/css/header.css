@@ -42,5 +42,42 @@
 }
 
 .header-input-text {
-	
+	width: calc(100% - 60px);
+	height: 40px;
+	padding: 0 6px;
+	border: 1px solid #8f8f8f;
+	border-right: none;
+	border-radius: 2px 0 0 2px;
+}
+
+.header-input-button {
+	width: 60x;
+	height: 40px;
+	border: 1px solid #8f8f8f;
+	border-left: none;
+	border-radius: 0 2px 0 2px;
+}
+
+.header-end {
+	display: flex;
+}
+
+.header-search {
+	display: none; /* 화면이 좁아졌을 때만 보여야 함 */
+	margin-right: 5px;
+	border: none;
+	background-color: transparent;
+	font-size: 1.5rem;
+}
+
+.header-profile {
+	width: 40px;
+	height: 40px;
+	border: 1px solid #eaeaea;
+	border-radius: 50%;
+	background-color: tomato;
+	/* 이미지가 있는 경우
+	background-image: url(../이미지 경로.png);
+	background-size: 40px 40px;
+	*/
 }
