@@ -81,3 +81,23 @@
 	background-size: 40px 40px;
 	*/
 }
+
+
+/**/
+@media screen and ( max-width: 800px ) {
+	/* 800 px 기준으로 로고 숨기기 */
+	.header-title {
+		display: none; 
+	}
+}
+
+@media screen and ( max-width: 400px ) {
+	/* 400px 기준으로 검색창 대신에 돋보기 보여주기 */
+	.header-center {
+		display: none; 
+	}
+	
+	.header-search {
+		display: block;
+	}
+}
