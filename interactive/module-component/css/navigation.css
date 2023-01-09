@@ -1,0 +1,52 @@
+.nav {
+	position: fixed; /* 왼쪽에 고정 */
+	top: 0;
+	left: 0;
+	z-index: 10; /* header보다 낮은 값을 주어 아래에 둠 */
+}
+
+.nav-wrapper {
+	min-width: 200px;
+	min-height: 100vh;
+	background-color: #f8f8f8;
+	padding: 80px 0 0 0;
+	list-style: none;
+}
+
+.nav-wrapper li {
+	display: flex;
+	padding: 10px 16px 10px;
+}
+
+/* 마우스 hover 효과 */
+.nav-wrapper li:hover {
+	background-color: #eaeaea;
+}
+
+.nav-icon {
+	border: none;
+	background-color: transparent;
+	font-size: 1.5rem;
+}
+
+.nav-menu {
+	margin: 0 0 0 8px;
+	font-size: 1.2rem;
+	border: none;
+	background-color: transparent;
+}
+
+@media screen and ( max-width: 800px ) {
+	.nav-menu {
+		display: none;
+	}
+	.nav-wrapper {
+		min-width: 0; /* 공간 차지 방지 */
+	}
+}
+
+@media screen and ( max-width: 400px ) {
+	.nav-wrapper {
+		display: none;
+	}
+}
