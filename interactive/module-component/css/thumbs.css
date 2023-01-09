@@ -1,0 +1,79 @@
+.thumbs-wrapper {
+	display: flex;
+	flex-wrap: wrap; /* 1차원 정렬을 여러 행으로 */
+	justify-content: space-between;
+	margin: 60px 0 0 200px;
+	padding: 20px 0 0 10px;
+}
+
+.thumbs-item {
+	width: 25%;
+	margin: 0 0 15px 0;
+	padding: 0 10px;
+}
+
+.thumbs-thumbnail {
+	max-width: 100%; /* 컨테이너 안에 맞게 */
+	margin: 0 0 10px 0;
+}
+
+.thumbs-info {
+	display: flex;
+}
+
+.thumbs-profile {
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	background-color: pink;
+}
+
+.thumbs-text {
+	width: calc(100% - 36px);
+	padding-left: 10px;
+}
+
+.thumbs-text-title {
+	font-size: 1.2rem;
+	margin-bottom: 0.5em;
+}
+
+.thumbs-text-owner {
+	font-size: 1rem;
+	color: #aeaeae;
+	margin-bottom: 0.2em;
+}
+
+.thumbs-text-anal {
+	font-size: 0.9rem;
+	color: #aeaeae;
+}
+
+@media screen and ( max-width: 1000px ) {
+	.thumbs-item {
+		width: 33%;
+	}
+}
+
+@media screen and ( max-width: 800px ) {
+	.thumbs-item {
+		width: 50%;
+	}	
+	
+	.thumbs-wrapper {
+		/* 사라지는 nav 영역 채우기 */
+		margin: 60px 0 0 60px;
+	}
+}
+
+@media screen and ( max-width: 400px ) {
+	.thumbs-item {
+		width: 100%;
+	}
+	
+		.thumbs-wrapper {
+		/* 사라지는 nav 영역 채우기 */
+		margin: 60px 0 0 0;
+		padding: 20px 0 0 0;
+	}
+}
