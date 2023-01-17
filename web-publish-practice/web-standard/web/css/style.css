@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+/* 전체 레이아웃 */
+#wrap {
+	
+}
+
+header {
+	height: 325px;
+	background: #111;
+}
+
+main {
+	height: 800px;
+	background: #222;
+}
+
+footer {
+	height: 200px;
+	background: #333;
+}
