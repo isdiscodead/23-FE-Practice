@@ -19,3 +19,37 @@ footer {
 	height: 200px;
 	background: #333;
 }
+
+
+/* 컨테이너 */
+.container {
+	margin: 0 auto;
+	height: inherit;
+	background: rgba(0, 0, 0, 0.3);
+	font-size: 40px;
+	color: white;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+
+/* 컨텐츠 레이아웃 */
+#cont-nav {
+	height: 200px;
+	background: #333;
+}
+
+#cont-tit {
+	height: 200px;
+	background: #444;
+}
+
+#cont-ban {
+	height: 200px;
+	background: #555;
+}
+
+#cont-cont {
+	height: 200px;
+	background: #666;
+}
