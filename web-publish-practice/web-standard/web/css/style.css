@@ -1,5 +1,14 @@
 @charset "utf-8";
 
+/* WA 기법은 이미지가 없어도 대체 텍스트 보임 */
+.ir_wa {
+	display: block;
+	overflow: hidden;
+	position: relative;
+	z-index: -1;
+	width: 100%;
+}
+
 /* 스킵 네비게이션 */
 #skip {
 	position: relative;
@@ -29,8 +38,9 @@
 }
 
 header {
-	height: 325px;
-	background: #111;
+	height: 500px;
+	/* 백그라운드는 반복됨 repeat-x로 x축만 반복되게 함 */
+	background: url(https://i.pinimg.com/474x/2b/c8/3e/2bc83ec36371f5d8251f9a3dbc22a225.jpg) repeat-x;
 }
 
 main {
@@ -52,7 +62,6 @@ footer {
 	font-size: 40px;
 	color: white;
 	text-align: center;
-	text-transform: uppercase;
 }
 
 
@@ -75,4 +84,100 @@ footer {
 #cont-cont {
 	height: 200px;
 	background: #666;
+}
+
+
+/* 헤더 레이아웃 */
+@font-face {
+    font-family: 'PyeongChangPeace-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+.header {
+	font-family: 'PyeongChangPeace-Bold', AppleSDGothicNeo-Regular, 'Malgun Gothic', '맑은 고딕', dotum, '돋움', sans-serif;
+	text-transform: uppercase;
+}
+
+.header .header-menu {
+	text-align: right;
+}
+
+.header .header-menu a {
+	color: white;
+	font-size: 20px;
+	padding: 10px 0px 10px 13px; /* inline 태그는 padding 값이 먹히지 않음 */
+	display: inline-block; /* 따라서 inline-block 속성을 넣어서 padding 먹히게 ... */
+}
+
+.header .header-menu a:hover {
+	color: skyblue;
+}
+
+.header .header-tit {
+	background-color: #4aa8d4;
+	font-size: 32px;
+	padding: 10px 20px 10px 20px;
+	margin-top: 20px;
+}
+
+.header .header-tit h1 {
+	text-align: center;
+}
+
+.header .header-tit a {
+	display: inline-block;
+	color: white;
+	background-color: #2698cb;
+	padding: 5px 20px 6px 20px;
+	margin: 10px;
+	border-radius: 50%;
+}
+
+.header .header-tit a:hover {
+	color: pink;
+}
+
+.header .header-icon {
+	text-align: center;
+	margin-top: 30px;
+}
+
+.header .header-icon a {
+	width: 60px;
+	height: 60px;
+	display: inline-block;
+	background: url(https://github.com/webstoryboy/webstandard2019/blob/master/img/icon.png?raw=true);
+}
+
+.header .header-icon a.class2 {
+	background-position: 0px -60px;
+}
+
+
+.header .header-icon a.class3 {
+	background-position: 0 -120px;
+}
+
+.header .header-icon a.class4 {
+	background-position: 0 -180px;
+}
+
+.header .header-icon a.class1:hover {
+	background-position: -60px 0px;
+}
+
+
+.header .header-icon a.class2:hover {
+	background-position: -60px -60px;
+}
+
+
+.header .header-icon a.class3:hover {
+	background-position: -60px -120px;
+}
+
+.header .header-icon a.class4:hover {
+	background-position: -60px -180px;
 }
