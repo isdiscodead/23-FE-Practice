@@ -38,14 +38,14 @@
 }
 
 header {
-	height: 500px;
+	height: 400px;
 	/* 백그라운드는 반복됨 repeat-x로 x축만 반복되게 함 */
 	background: url(https://i.pinimg.com/474x/2b/c8/3e/2bc83ec36371f5d8251f9a3dbc22a225.jpg) repeat-x;
 }
 
 main {
-	height: 800px;
-	background: #222;
+	/* height: 800px;
+	background: #222; */
 }
 
 footer {
@@ -56,10 +56,10 @@ footer {
 
 /* 컨테이너 */
 .container {
+	width: 990px;
 	margin: 0 auto;
 	height: inherit;
-	background: rgba(0, 0, 0, 0.3);
-	font-size: 40px;
+	/* background: rgba(0, 0, 0, 0.3); */
 	color: white;
 	text-align: center;
 }
@@ -67,8 +67,8 @@ footer {
 
 /* 컨텐츠 레이아웃 */
 #cont-nav {
-	height: 200px;
-	background: #333;
+	/* height: 200px; */
+	/* background: #333; */
 }
 
 #cont-tit {
@@ -180,4 +180,57 @@ footer {
 
 .header .header-icon a.class4:hover {
 	background-position: -60px -180px;
+}
+
+
+/* 전체 메뉴 */
+.nav {
+	/* float: left로 인한 영역 깨짐( height: 0) 방지법 
+		1. 깨지는 영역에 똑같이 float: left 사용 -> 모든 박스에 써줘야 하므로 비추천
+		2. float의 성질을 차단하는 clear: both 사용 -> 구조가 복잡해지면 어떤 영역이 깨졌는지 찾기 어려움
+		3. float을 사용한 상위 박스에게 overflow: hidden을 사용 
+		4. clearfix 사용 -> 반응형에서 ~~ 
+	*/
+	overflow: hidden;
+	padding: 30px 10px;
+}
+
+.nav > div h3 {
+	font-size: 20px;
+	color: #25a2d0;
+	text-align: left;
+	margin-bottom: 4px;
+}
+
+
+/* > 기호로 첫 번째 자식만 선택 */
+.nav > div {
+	float: left;
+	width: 40%;
+}
+
+.nav > div:last-child {
+	width: 20%; /* ie9부터 사용 가능 */
+}
+.nav > div.last {
+	width: 20%;
+}
+
+.nav > div ol {
+	overflow: hidden;
+} 
+
+.nav > div ol li {
+	float: left;
+	width: 50%;
+	text-align: left;
+}
+
+.nav > div.last ol li {
+	width: 100%;
+}
+
+.nav > div ol li a:hover {
+	color: #25a2d0;
+	text-decoration: underline;
 }
