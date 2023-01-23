@@ -69,21 +69,31 @@ footer {
 #cont-nav {
 	/* height: 200px; */
 	/* background: #333; */
+	background-color: #f6fdff;
 }
 
 #cont-tit {
+	/*
 	height: 200px;
 	background: #444;
+	*/
+	background-color: #EAF7FD;
 }
 
 #cont-ban {
+	/*
 	height: 200px;
 	background: #555;
+	*/
+	background-color: #dceff7;
 }
 
 #cont-cont {
+	/*
 	height: 200px;
 	background: #666;
+	*/
+	background-color: #f6fdff;
 }
 
 
@@ -106,13 +116,16 @@ footer {
 
 .header .header-menu a {
 	color: white;
+	background: #4aa8d4;
 	font-size: 20px;
-	padding: 10px 0px 10px 13px; /* inline 태그는 padding 값이 먹히지 않음 */
+	text-align: center;
+	padding: 10px 10px 20px 10px; /* inline 태그는 padding 값이 먹히지 않음 */
 	display: inline-block; /* 따라서 inline-block 속성을 넣어서 padding 먹히게 ... */
+	border-radius: 0 0 50% 50%;
 }
 
 .header .header-menu a:hover {
-	color: skyblue;
+	color: pink;
 }
 
 .header .header-tit {
@@ -233,4 +246,323 @@ footer {
 .nav > div ol li a:hover {
 	color: #25a2d0;
 	text-decoration: underline;
+}
+
+
+/* 타이틀 */
+.tit {
+	position: relative;
+}
+
+.tit h2 {
+	font-size: 40px;
+	text-align: center;
+	padding: 10px 0px;
+	letter-spacing: 2px;
+	color: #2c94c4;
+}
+
+.tit .btn {
+	position: absolute; /* 반응형에서는 사용 지양하기 */
+	top: 5px;
+	right: 0;
+	width: 60px;
+	height: 60px;
+	background: url(https://github.com/webstoryboy/webstandard2019/blob/master/img/icon.png?raw=true) no-repeat 0 -600px;
+}
+
+
+/* 배너 */
+.ban {
+	position: relative;
+	padding: 24px 0px 20px;
+}
+
+.ban a.prev, a.next {
+	position: absolute;
+	top: 60px;
+	width: 43px;
+	height: 43px;
+	background: url(https://github.com/webstoryboy/webstandard2019/blob/master/img/icon.png?raw=true) no-repeat;
+}
+
+.ban a.prev {
+	left: -60px;
+	background-position: -150px 0px;
+}
+
+.ban a.next {
+	right: -60px;
+	background-position: -150px -43px;
+}
+
+.ban a.prev:hover {
+	left: -60px;
+	background-position: -193px 0px;
+}
+
+.ban a.next:hover {
+	right: -60px;
+	background-position: -193px -43px;
+}
+
+.ban ul {
+	overflow: hidden;
+}
+
+.ban ul li {
+	float: left;
+	width: 330px;
+}
+
+.ban ul li:last-child { /* ie9부터 적용 */
+	text-align: right;
+}
+
+.ban ul li:nth-child(2) {
+	text-align: center;
+}
+
+/* ie8 이하에서는 아래 코드로 적용 가능 */
+.ban ul li.ban-img1 {
+	text-align: left;
+}
+.ban ul li.ban-img2 {
+	text-align: center;
+}
+
+.ban ul li img {
+	border: 4px solid #dcdcdc;
+}
+
+.ban ul li img:hover {
+	border-color: #97bcdc;
+}
+
+
+/* 컨텐츠 */
+.cont {
+	overflow: hidden;
+	padding-top: 30px;
+}
+
+.cont .column {
+	width: 289px;
+	height: 363px;
+	position: relative;
+	float: left;
+	margin: 0 30px 30px 0;
+	padding-right: 30px;
+}
+
+.cont .col1 {
+	border-right: 1px solid #c8c8c8;
+}
+
+.cont .col2 {
+	border-right: 1px solid #c8c8c8;
+}
+
+.cont .col3 {
+	margin-right: 0;
+	padding-right: 0;
+}
+
+.cont .col4 {
+	border-right: 1px solid #c8c8c8;
+}
+
+.cont .col5 {
+	border-right: 1px solid #c8c8c8;
+}
+
+.cont .col6 {
+	margin-right: 0;
+	padding-right: 0;
+}
+
+.cont .column .ico-img {
+	display: block;
+	width: 60px;
+	height: 60px;
+	background: url(https://github.com/webstoryboy/webstandard2019/blob/master/img/icon.png?raw=true) no-repeat;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.cont .column .ico-tit {
+	padding-left: 70px;
+	display: block;
+	text-align: left;
+	font-size: 16px;
+	color: #2c94c4;
+}
+
+.cont .column .ico-desc {
+	display: block;
+	text-align: left;
+	padding-left: 70px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #d0d0d0;
+}
+
+.cont .col1 .ico-img { background-position: 0px -240px; }
+.cont .col2 .ico-img { background-position: 0px -300px; }
+.cont .col3 .ico-img { background-position: 0px -360px; }
+.cont .col4 .ico-img { background-position: 0px -420px; }
+.cont .col5 .ico-img { background-position: 0px -480px; }
+.cont .col6 .ico-img { background-position: 0px -540px; }
+
+.cont .col1 .ico-img:hover { background-position: -60px -240px; }
+.cont .col2 .ico-img:hover { background-position: -60px -300px; }
+.cont .col3 .ico-img:hover { background-position: -60px -360px; }
+.cont .col4 .ico-img:hover { background-position: -60px -420px; }
+.cont .col5 .ico-img:hover { background-position: -60px -480px; }
+.cont .col6 .ico-img:hover { background-position: -60px -540px; }
+	
+	
+/* 게시판 */
+.notice {
+	position: relative;
+	margin-top: 15px;
+	text-align: left;
+}
+	
+.notice h4 {
+	font-size: 14px; 
+	color: #0093bd; 
+	padding-bottom: 3px; 
+	font-weight: bold;
+}
+	
+.notice ul {
+	text-align: left;
+}
+	
+.notice ul li {
+	background: url(https://github.com/webstoryboy/webstandard2019/blob/master/img/dot.gif?raw=true) no-repeat 0 8px; 
+	padding-left: 8px;
+	overflow: hidden; 
+	text-overflow: ellipsis; 
+	white-space: nowrap; 
+	font-size: 12px; 
+}
+	
+.notice ul li a { 	
+	overflow: hidden; 
+	text-overflow: ellipsis; 
+	white-space: nowrap; 
+	font-size: 12px; 
+}
+	
+.notice a.more {
+	position: absolute; 
+	right: 0;	
+	top: 0; 
+	display: block; 
+	background: url(https://github.com/webstoryboy/webstandard2019/blob/master/img/icon.png?raw=true) -150px -90px; 
+	width: 17px; 
+	height: 17px;
+}
+	
+	
+/* 게시판2 */
+.notice2 {
+	position: relative; 
+	margin-top: 15px;
+	text-align: left;
+}
+	
+.notice2 h4 {
+	font-size: 14px; 
+	color: #0093bd; 
+	padding-bottom: 3px; 
+	font-weight: bold;
+}
+
+.notice2 li {
+	text-align: left;
+	font-size: 10px;
+	overflow: hidden; 
+	background: url(https://github.com/webstoryboy/webstandard2019/blob/master/img/dot.gif?raw=true) no-repeat 0 8px; 
+	padding-left: 8px;
+}
+
+.notice2 li a {
+	float: left; 
+	width: 65%; 
+	overflow: hidden; 
+	text-overflow: ellipsis; 
+	white-space: nowrap; 
+	font-size: 12px; 
+}
+
+.notice2 li span { 
+	float: right;
+	width: 30%; 
+	text-align: right;
+}
+
+.notice2 a.more {
+	position: absolute; 
+	right: 0; 
+	top: 0; 
+	display: block; 
+	background: url(https://github.com/webstoryboy/webstandard2019/blob/master/img/icon.png?raw=true) -150px -90px; 
+	width: 17px; 
+	height: 17px;
+}
+
+
+/* 게시판 3 */
+.notice3 {
+	position: relative;
+	margin-top: 15px;
+	text-align: left;
+}
+
+.notice3 h4 {
+	font-size: 14px; 
+	color: #0093bd; 
+	padding-bottom: 3px; 
+	font-weight: bold;
+}
+
+.notice3 li {
+	position: relative; 
+	padding: 8px 0 14px 60px;
+}
+
+.notice3 li a img {
+	width: 50px; 
+	position: absolute; 
+	left: 0; 
+	top: 0; 
+	border: 1px solid #0093bd;
+}
+
+.notice3 li a strong {
+	display: block; 
+	overflow: hidden; 
+	text-overflow: ellipsis; 
+	white-space: nowrap;
+}
+
+.notice3 li a span {
+	display: block; 
+	overflow: hidden; 
+	text-overflow: ellipsis; 
+	white-space: nowrap; 
+	font-size: 12px;
+}
+
+.notice2 a.more {
+	position: absolute; 
+	right: 0; 
+	top: 0; 
+	display: block; 
+	background: url(../img/icon.png) -150px -90px; 
+	width: 17px; 
+	height: 17px;
 }
