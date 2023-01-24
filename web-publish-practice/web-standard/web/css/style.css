@@ -125,18 +125,18 @@ footer {
 }
 
 .header .header-menu a:hover {
-	color: pink;
+	color: #222;
 }
 
 .header .header-tit {
 	background-color: #4aa8d4;
-	font-size: 32px;
 	padding: 10px 20px 10px 20px;
 	margin-top: 20px;
 }
 
 .header .header-tit h1 {
 	text-align: center;
+	font-size: 32px;
 }
 
 .header .header-tit a {
@@ -149,7 +149,7 @@ footer {
 }
 
 .header .header-tit a:hover {
-	color: pink;
+	color: #222;
 }
 
 .header .header-icon {
@@ -565,4 +565,140 @@ footer {
 	background: url(../img/icon.png) -150px -90px; 
 	width: 17px; 
 	height: 17px;
+}
+
+
+/* 마우스 오버효과1 */
+.notice_hover h4 {
+	font-size: 14px; 
+	color: #0093bd; 
+	padding-bottom: 3px; 
+	font-weight: bold;
+	margin-top: 15px;
+	margin-bottom: 5px;
+}
+
+.notice_hover ul {
+	overflow: hidden;
+}
+
+.notice_hover li {
+	float: left; 
+	width: 93px;
+	margin-right: 5px; 
+	text-align: center;
+}
+
+.notice_hover li:last-child {
+	margin-right: 0; /* ie9부터 적용 */
+} 
+.notice_hover li.last {
+	margin-right: 0; /* 모든 브라우저에 적용 */
+} 
+
+.notice_hover li span {
+	position: relative; 
+	display: block; 
+	width: 93px; 
+	height: 93px; 
+	line-height: 93px;
+}
+
+.notice_hover li span img {
+	width: 100%;
+}
+
+.notice_hover li span em {
+	visibility: hidden;
+	position: absolute; 
+	left: 0; 
+	top: 0;
+	background: rgba(0,0,0,0.7); 
+	color:#fff; 
+	width: 100%; 
+	height: 100%;
+}
+
+.notice_hover li span:hover em {
+	visibility: visible;
+}
+
+.notice_hover li strong {
+	padding-top: 3px; 
+	display: inline-block; 
+	font-size: 12px;
+}
+
+
+/* 마우스 효과 2 */
+.notice_hover2 {
+	margin-top: 15px;
+}
+
+.notice_hover2 ul {
+	overflow: hidden;
+}
+
+.notice_hover2 li {
+	float: left; 
+	width: 93px; 
+	text-align: center; 
+	margin-right: 5px;
+}
+
+.notice_hover2 li.last {
+	margin-right: 0;
+}
+
+.notice_hover2 li a span {
+	position: relative; 
+	display: block; 
+	width: 93px; 
+	height: 93px;
+}
+
+.notice_hover2 li a span img {
+	width: 100%; 
+}
+
+.notice_hover2 li a span em {
+	visibility: hidden; 
+	position: absolute; 
+	left: 0; 
+	bottom: 0; 
+	width: 100%; 
+	background: rgba(0,0,0,0.7); 
+	color:#fff;
+}
+
+.notice_hover2 li a span:hover em {
+	visibility: visible;
+}
+
+.notice_hover2 li a strong {
+	padding-top: 3px; 
+	display: inline-block; 
+	font-size: 12px;
+}
+
+
+/* 탭 메뉴 */
+.tab-menu {
+	
+}
+
+.tab-menu ul {
+	
+}
+
+.tab-menu ul li {
+	
+}
+
+.tab-menu ul li a {
+	
+}
+
+.tab-menu ul li ul {
+	
 }
