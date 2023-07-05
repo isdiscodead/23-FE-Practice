@@ -1,23 +1,13 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonIcon } from '@ionic/react';
-import { settings } from 'ionicons/icons';
+import { IonContent, IonPage, IonTitle, IonToolbar, IonButtons, IonHeader, IonMenuButton } from '@ionic/react';
 import './Home.css';
+import Header from '../components/Header/Header';
 
 const Home: React.FC = () => {
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>DayMoji</IonTitle>
-          <IonIcon icon={settings} size='large'></IonIcon>
-        </IonToolbar>
-      </IonHeader>
+          <Header />
+
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar> 
-            <IonTitle size="large" >DayMoji</IonTitle>
-            <IonIcon icon={settings} size='large'></IonIcon>
-          </IonToolbar>
-        </IonHeader>
       </IonContent>
     </IonPage>
   );
