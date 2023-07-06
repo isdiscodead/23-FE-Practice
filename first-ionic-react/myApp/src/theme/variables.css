@@ -5,7 +5,7 @@ http://ionicframework.com/docs/theming/ */
 :root {
   /** primary **/
   --ion-color-primary: #F1B43D;
-  --ion-color-primary-rgb: 56, 128, 255;
+  --ion-color-primary-rgb: 241, 181, 61;
   --ion-color-primary-contrast: #fff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
   --ion-color-primary-shade: #F1B43D;
@@ -13,7 +13,7 @@ http://ionicframework.com/docs/theming/ */
 
   /** secondary **/
   --ion-color-secondary: #F9F5F1;
-  --ion-color-secondary-rgb: 61, 194, 255;
+  --ion-color-secondary-rgb: 249, 245, 241;
   --ion-color-secondary-contrast: #626262;
   --ion-color-secondary-contrast-rgb: 98, 98, 98;
   --ion-color-secondary-shade: #F9F5F1;
