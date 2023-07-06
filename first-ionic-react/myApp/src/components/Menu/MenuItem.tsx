@@ -7,7 +7,6 @@ interface MenuInfo {
     children?: React.ReactNode; 
 }
 
-
 const StyledMenuItem = styled.div`
     border-bottom: 1px solid lightgray;
     margin-bottom: 10px;
@@ -16,11 +15,13 @@ const StyledMenuItem = styled.div`
     justify-content: space-between;
 `;
 
-export default function MenuItem({ title, href, children }: MenuInfo) {
+function MenuItem({ title, href, children }: MenuInfo) {
   return (
-    <StyledMenuItem>
+    <StyledMenuItem onClick={() => console.log('click')}>
         { title }
         { children }
     </StyledMenuItem>
   )
 }
+
+export default React.memo(MenuItem);

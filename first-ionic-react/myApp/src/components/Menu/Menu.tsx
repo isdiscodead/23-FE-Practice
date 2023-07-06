@@ -1,5 +1,5 @@
 import { IonMenu, IonToolbar, IonButtons, IonBackButton, IonContent, IonToggle, IonTitle } from '@ionic/react'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import MenuItem from './MenuItem'
 import { styled } from 'styled-components'
 
@@ -11,6 +11,10 @@ const TopBottomContainer = styled.div`
 `;
 
 function Menu() {
+    const [toggleOn, setToggleOn] = useState(true)
+
+useEffect(() => console.log(toggleOn), [toggleOn])
+
   return (
     <IonMenu contentId="main-content">
         <IonToolbar color={'secondary'}>
@@ -21,9 +25,9 @@ function Menu() {
             <TopBottomContainer> 
                 <div>
                     <MenuItem title="🌕 화면 모드" href=''>
-                        <IonToggle labelPlacement="end" color="">Dark Theme</IonToggle>
+                        <IonToggle checked={toggleOn} onIonChange={() => setToggleOn(prev => !prev)} disabled={false} labelPlacement="end" color="">Dark Theme</IonToggle>
                     </MenuItem>
-                    <MenuItem title="🔐 로그인" href='' />
+                    <MenuItem  title="🔐 로그인" href='' />
                     <MenuItem title="✈️ 고객센터 페이지" href='' />
                     <MenuItem title="📝 앱 버전 | 1.0.0" href='' />
                 </div>
