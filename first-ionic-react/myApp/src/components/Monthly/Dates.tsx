@@ -17,7 +17,7 @@ const DateContainer = styled.div`
 `;
 
 const Month = styled.h1`
-    color: #626262;
+    color: --var(--ion-color-secondary-contrast);
     font-weight: 900;
     font-size: 48px;
     margin-right: 10px;

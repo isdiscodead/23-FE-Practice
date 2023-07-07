@@ -29,15 +29,15 @@ setupIonicReact();
 // for context
 import { useState } from 'react';
 import { ThemeContext } from './contexts/ThemeContext';
+import useDarkMode from './hooks/useDarkMode';
 
 
 const App: React.FC = () => {
-  const [isDark, setIsDark] = useState(false);
+  const {isDark, setMode} = useDarkMode(false);
 
   return (
-    <ThemeContext.Provider value={{ isDark, setIsDark }}>
-    <IonApp>
-      
+    <ThemeContext.Provider value={{isDark, setMode}}>
+          <IonApp>
         <IonReactRouter>
           <Menu />
           <IonRouterOutlet>

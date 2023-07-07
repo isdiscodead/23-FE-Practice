@@ -13,7 +13,13 @@ const TopBottomContainer = styled.div`
 
 function Menu() {
 
-    const {isDark, setIsDark} = useContext(ThemeContext);
+    // const [isDark, setIsDark] = useState(false);
+    const {isDark, setMode} = useContext(ThemeContext);
+
+    const toggleDarkModeHandler = () => {
+        setMode( !isDark );
+        // console.log("is dark mode? ", isDark)
+    }
 
     return (
         <IonMenu contentId="main-content">
@@ -26,7 +32,7 @@ function Menu() {
                     <div>
                         <MenuItem title="🌕 화면 모드" href=''>
                             <IonToggle checked={isDark ? true : false} 
-                                onIonChange={() => setIsDark(prev => !prev)} 
+                                onIonChange={ toggleDarkModeHandler } 
                                 labelPlacement="end" color="">Dark Theme</IonToggle>
                         </MenuItem>
                         <MenuItem  title="🔐 로그인" href='' />

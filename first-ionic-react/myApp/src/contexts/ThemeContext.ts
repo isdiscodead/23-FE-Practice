@@ -1,8 +1,23 @@
-import { createContext, useState } from "react";
+import React, { createContext, useState } from "react";
 
-type theme = {
+type Theme = {
     isDark: boolean
-    setIsDark: React.Dispatch<React.SetStateAction<boolean>>
+    setMode: (isDark: boolean) => void;
 }
 
-export const ThemeContext = createContext(null); // 인자 = 초기값
+// as 연산자로 initial value 없이 사용할 수 있음 
+export const ThemeContext = createContext({} as Theme); // 인자 = 초기값
+ThemeContext.Provider
+
+// API 호출 등 data에 대해서 복잡한 로직이 필요할 경우 Provider도 작성해서 export하여 사용하는 것이 좋음 ?? 
+/* 
+
+export const ThemeProvider = (children: React.ReactNode ) => {
+    // logics & states ... 
+    
+    return (
+        <ThemeContext.Provider value={...}>{ children }</ThemeContext.Provider>
+    )
+}
+
+*/
