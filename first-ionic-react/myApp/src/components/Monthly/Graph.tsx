@@ -1,7 +1,16 @@
 import React from 'react'
+import GraphItem from './GraphItem'
 
-export default function Graph() {
+function Graph() {
   return (
-    <div>Graph</div>
+    <>
+      <GraphItem />
+      <GraphItem />
+      <GraphItem />
+      <GraphItem />
+      <GraphItem />
+    </>
   )
 }
+
+export default Graph

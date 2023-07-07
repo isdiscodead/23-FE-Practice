@@ -25,20 +25,34 @@ import './theme/variables.css';
 
 setupIonicReact();
 
-const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-      <Menu />
-      <IonRouterOutlet>
-        <Route exact path="/home">
-          <Home />
-        </Route>
-        <Route exact path="/">
-          <Redirect to="/home" />
-        </Route>
-      </IonRouterOutlet>
-    </IonReactRouter>
-  </IonApp>
-);
+
+// for context
+import { useState } from 'react';
+import { ThemeContext } from './contexts/ThemeContext';
+
+
+const App: React.FC = () => {
+  const [isDark, setIsDark] = useState(false);
+
+  return (
+    <ThemeContext.Provider value={{ isDark, setIsDark }}>
+    <IonApp>
+      
+        <IonReactRouter>
+          <Menu />
+          <IonRouterOutlet>
+            <Route exact path="/home">
+              <Home />
+            </Route>
+            <Route exact path="/">
+              <Redirect to="/home" />
+            </Route>
+          </IonRouterOutlet>
+        </IonReactRouter>
+      
+    </IonApp>
+    </ThemeContext.Provider>
+  )
+};
 
 export default App;

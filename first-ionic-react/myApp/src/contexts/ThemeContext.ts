@@ -1,9 +1,8 @@
-import { useContext } from "react";
+import { createContext, useState } from "react";
 
-function ThemeContext() {
-  return (
-    ""
-  );
+type theme = {
+    isDark: boolean
+    setIsDark: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export default ThemeContext
+export const ThemeContext = createContext(null); // 인자 = 초기값
