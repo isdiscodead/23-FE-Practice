@@ -11,9 +11,7 @@ const TopBottomContainer = styled.div`
 `;
 
 function Menu() {
-    const [toggleOn, setToggleOn] = useState(true)
-
-useEffect(() => console.log(toggleOn), [toggleOn])
+    const [isDarkMode, setIsDarkMode] = useState(true)
 
   return (
     <IonMenu contentId="main-content">
@@ -25,11 +23,13 @@ useEffect(() => console.log(toggleOn), [toggleOn])
             <TopBottomContainer> 
                 <div>
                     <MenuItem title="🌕 화면 모드" href=''>
-                        <IonToggle checked={toggleOn} onIonChange={() => setToggleOn(prev => !prev)} disabled={false} labelPlacement="end" color="">Dark Theme</IonToggle>
+                        <IonToggle checked={isDarkMode} 
+                            onIonChange={() => setIsDarkMode(prev => !prev)} 
+                            labelPlacement="end" color="">Dark Theme</IonToggle>
                     </MenuItem>
                     <MenuItem  title="🔐 로그인" href='' />
                     <MenuItem title="✈️ 고객센터 페이지" href='' />
-                    <MenuItem title="📝 앱 버전 | 1.0.0" href='' />
+                    <MenuItem title="📝 앱 버전 : 1.0.0" href='' />
                 </div>
                 
                 <p style={{ color: 'gray', textAlign: 'center' }}>

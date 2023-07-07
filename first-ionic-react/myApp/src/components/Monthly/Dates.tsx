@@ -7,7 +7,7 @@ const DateEmojiContainer = styled.div`
     width: 100%;
     border-bottom: 1.5px solid gray;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     height: 70px;
 `;
 

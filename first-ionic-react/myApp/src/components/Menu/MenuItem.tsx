@@ -17,7 +17,7 @@ const StyledMenuItem = styled.div`
 
 function MenuItem({ title, href, children }: MenuInfo) {
   return (
-    <StyledMenuItem onClick={() => console.log('click')}>
+    <StyledMenuItem>
         { title }
         { children }
     </StyledMenuItem>
