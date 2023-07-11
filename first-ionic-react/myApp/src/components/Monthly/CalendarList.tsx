@@ -12,8 +12,8 @@ const CalendarContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(6, 1fr);
-  grid-gap: 5px;
   place-items: center;
+  padding-bottom: 15px;
 `;
 
 // 요일 찾기 
@@ -35,12 +35,15 @@ const getDay = (year_str: string, month_str: string): number => {
 
 // 전체 날짜 개수
 const getDateCnt = (year:string, month:string) => {
-  const date = new Date(parseInt(year), parseInt(month)-1, 0)
+  const date = new Date(parseInt(year), parseInt(month), 0)
   return date.getDate();
 }
 
-function CalendarList({year, month}: { year: string, month: string }) {
-
+function CalendarList() {
+  const today = new Date();
+  const [year, setYear] = useState(today.getFullYear().toString());
+  const [month, setMonth] = useState((today.getMonth() < 9 ? "0"+(today.getMonth()+1) : (today.getMonth()+1)).toString());
+  
   const [dataList, setDataList] = useState(new Array(42));
 
   // 기본 값 초기화
@@ -60,14 +63,12 @@ function CalendarList({year, month}: { year: string, month: string }) {
       const startIdx = getDay(year, month);
 
       for ( let i=0; i < dataList.length ; i++ ) {
-        // console.log(year + "-" + month + "-" + (i+1))
         newArr[i] = {
           emoji: "",
-          date: ( i < startIdx ) || ( i > getDateCnt(year, month) ) ? "" : year + "-" + month + "-" + (dayIdx < 9 ? "0"+((dayIdx++)+1) : ((dayIdx++)+1)),
+          date: ( i < startIdx ) || ( i - startIdx >= getDateCnt(year, month) ) ? "" : year + "-" + month + "-" + (dayIdx < 9 ? "0"+((dayIdx++)+1) : ((dayIdx++)+1)),
           content: ""
         }
-
-        // console.log(curIdx, newArr[i], json[curIdx]);
+        
         if ( curIdx < json.length && newArr[i].date === json[curIdx].date ) {
           newArr[i] = json[curIdx];
           curIdx ++;
@@ -77,9 +78,6 @@ function CalendarList({year, month}: { year: string, month: string }) {
       setDataList([...newArr]);
     })
   }, []);
-
-
-  const today = new Date();
   
   return (
     <CalendarContainer>
