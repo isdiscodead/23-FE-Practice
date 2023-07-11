@@ -3,13 +3,16 @@ import { styled } from 'styled-components'
 
 // grid로 변경 필요 
 const DayList = styled.div`
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 5px;
+    place-items: center;
+    margin-bottom: 5px;
 `;
 
 const DayListItem = styled.span`
     display: block;
-    width: 35px;
+    width: 33px;
     color: #626262;
     margin: 5px;
     font-size: 14px;

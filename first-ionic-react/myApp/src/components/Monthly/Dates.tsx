@@ -61,6 +61,15 @@ export default function Dates() {
                     <Year>
                         { nowYear }
                     </Year>
+
+                    <div>
+                        <button>
+                            { "<" }
+                        </button>
+                        <button>
+                            { ">" }
+                        </button>
+                    </div>
                 </DateContainer>
                 <RepEmoji>
                     {repEmoji} 

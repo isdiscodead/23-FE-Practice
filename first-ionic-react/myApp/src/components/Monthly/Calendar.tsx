@@ -14,7 +14,7 @@ export default function Calendar() {
   return (
     <CalendarSectionContainer>
       <Day/>
-      <CalendarList />
+      <CalendarList year="2023" month="07" />
     </CalendarSectionContainer>
   )
 }
