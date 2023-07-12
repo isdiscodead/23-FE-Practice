@@ -2,6 +2,8 @@ import React from 'react'
 import GraphItem from './GraphItem'
 
 function Graph() {
+
+
   return (
     <>
       <GraphItem />

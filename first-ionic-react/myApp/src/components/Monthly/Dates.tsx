@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { styled } from 'styled-components'
 
 
@@ -36,24 +36,38 @@ const RepEmoji = styled.h1`
     align-self: flex-end;
 `
 
-const ArrowButton = ({  }) => {
-    // onClick
-}
-
 export default function Dates() {
 
     const [nowYear, setNowYear] = useState(() => {
-        return new Date().getFullYear();
+        return new Date().getFullYear().toString();
     });
     const [nowMonth, setNowMonth] = useState(() => {
         let month = new Date().getMonth() + 1;
         return month > 9 ? month : "0" + month;
     })
     const [nowDate, setNowDate] = useState(() => {
-        return new Date().getDate();
+        return new Date().getDate().toString();
     });
 
     const [repEmoji, setRepEmoji] = useState("🌼");
+
+    const ArrowButton = ( isForward: boolean ) => {
+        if ( isForward ) {
+            const month = Number(nowMonth)+1;
+            setNowMonth(month > 9 ? month.toString() : "0" + month);
+            if ( Number(month) > 12 ) {
+                setNowMonth("01");
+                setNowYear((Number(nowYear)+1).toString());
+            }
+        } else {
+            const month = Number(nowMonth)-1;
+            setNowMonth(month > 9 ? month.toString() : "0" + month);
+            if ( Number(month) < 1 ) {
+                setNowMonth("12");
+                setNowYear((Number(nowYear)-1).toString());
+            }
+        }
+    };
         
     return (
         <div>
@@ -67,16 +81,16 @@ export default function Dates() {
                     </Year>
 
                     <div>
-                        <button>
+                        <button onClick={ () => ArrowButton(false) }>
                             { "<" }
                         </button>
-                        <button>
+                        <button onClick={ () => ArrowButton(true) }>
                             { ">" }
                         </button>
                     </div>
                 </DateContainer>
                 <RepEmoji>
-                    {repEmoji} 
+                    { repEmoji } 
                 </RepEmoji>
             </DateEmojiContainer>
         </div>

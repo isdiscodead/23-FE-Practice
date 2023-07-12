@@ -43,7 +43,6 @@ function CalendarList() {
   const today = new Date();
   const [year, setYear] = useState(today.getFullYear().toString());
   const [month, setMonth] = useState((today.getMonth() < 9 ? "0"+(today.getMonth()+1) : (today.getMonth()+1)).toString());
-  
   const [dataList, setDataList] = useState(new Array(42));
 
   // 기본 값 초기화
