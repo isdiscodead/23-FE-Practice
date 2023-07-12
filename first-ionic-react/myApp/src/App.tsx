@@ -27,31 +27,34 @@ setupIonicReact();
 
 
 // for context
-import { useState } from 'react';
 import { ThemeContext } from './contexts/ThemeContext';
 import useDarkMode from './hooks/useDarkMode';
+import { Provider } from 'react-redux';
+import { store } from './store/store';
 
 
 const App: React.FC = () => {
   const {isDark, setMode} = useDarkMode(false);
 
   return (
-    <ThemeContext.Provider value={{isDark, setMode}}>
-          <IonApp>
-        <IonReactRouter>
-          <Menu />
-          <IonRouterOutlet>
-            <Route exact path="/home">
-              <Home />
-            </Route>
-            <Route exact path="/">
-              <Redirect to="/home" />
-            </Route>
-          </IonRouterOutlet>
-        </IonReactRouter>
-      
-    </IonApp>
-    </ThemeContext.Provider>
+    <Provider store={store} >
+      <ThemeContext.Provider value={{isDark, setMode}}>
+            <IonApp>
+          <IonReactRouter>
+            <Menu />
+            <IonRouterOutlet>
+              <Route exact path="/home">
+                <Home />
+              </Route>
+              <Route exact path="/">
+                <Redirect to="/home" />
+              </Route>
+            </IonRouterOutlet>
+          </IonReactRouter>
+        
+      </IonApp>
+      </ThemeContext.Provider>
+    </Provider>
   )
 };
 

@@ -1,6 +1,8 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { styled } from 'styled-components'
-
+import { RootState } from '../../store/store';
+import { incMonth, decMonth } from '../../store/dateSlice';
 
 const DateEmojiContainer = styled.div`
     display: flex;
@@ -38,53 +40,30 @@ const RepEmoji = styled.h1`
 
 export default function Dates() {
 
-    const [nowYear, setNowYear] = useState(() => {
-        return new Date().getFullYear().toString();
-    });
-    const [nowMonth, setNowMonth] = useState(() => {
-        let month = new Date().getMonth() + 1;
-        return month > 9 ? month : "0" + month;
-    })
-    const [nowDate, setNowDate] = useState(() => {
-        return new Date().getDate().toString();
+    const dispach = useDispatch();
+
+    const { today, month, year } = useSelector((state: RootState) => {
+    return state.date;
     });
 
     const [repEmoji, setRepEmoji] = useState("🌼");
-
-    const ArrowButton = ( isForward: boolean ) => {
-        if ( isForward ) {
-            const month = Number(nowMonth)+1;
-            setNowMonth(month > 9 ? month.toString() : "0" + month);
-            if ( Number(month) > 12 ) {
-                setNowMonth("01");
-                setNowYear((Number(nowYear)+1).toString());
-            }
-        } else {
-            const month = Number(nowMonth)-1;
-            setNowMonth(month > 9 ? month.toString() : "0" + month);
-            if ( Number(month) < 1 ) {
-                setNowMonth("12");
-                setNowYear((Number(nowYear)-1).toString());
-            }
-        }
-    };
         
     return (
         <div>
             <DateEmojiContainer>
                 <DateContainer>
                     <Month>
-                        { nowMonth }
+                        { month }
                     </Month>
                     <Year>
-                        { nowYear }
+                        { year }
                     </Year>
 
                     <div>
-                        <button onClick={ () => ArrowButton(false) }>
+                        <button onClick={ () => dispach(decMonth(1)) }>
                             { "<" }
                         </button>
-                        <button onClick={ () => ArrowButton(true) }>
+                        <button onClick={ () =>  dispach(incMonth(1)) }>
                             { ">" }
                         </button>
                     </div>
@@ -96,3 +75,4 @@ export default function Dates() {
         </div>
     )
 }
+
