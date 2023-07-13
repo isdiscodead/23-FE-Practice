@@ -38,7 +38,7 @@ const App: React.FC = () => {
 
   return (
     <Provider store={store} >
-      <ThemeContext.Provider value={{isDark, setMode}}>
+      <ThemeContext.Provider value={{ isDark, setMode }}>
             <IonApp>
           <IonReactRouter>
             <Menu />

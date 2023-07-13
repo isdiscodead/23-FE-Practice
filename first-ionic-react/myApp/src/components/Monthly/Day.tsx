@@ -13,7 +13,7 @@ const DayList = styled.div`
 const DayListItem = styled.span`
     display: block;
     width: 33px;
-    color: #626262;
+    color: --var(--ion-color-secondary);
     margin: 5px;
     font-size: 14px;
     text-transform: uppercase;

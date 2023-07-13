@@ -41,7 +41,7 @@ const RepEmoji = styled.h1`
 `
 
 const ArrowBtn = styled.button`
-    background-color: #8888;
+    background-color: ${ document.body.classList.contains("dark") ? "#F9F5F1" : "#999" };
     border-radius: 5px;
     margin-left: 5px;
     margin-top: 18px;
@@ -55,8 +55,10 @@ export default function Dates() {
         return state.date;
     });
 
-    const [repEmoji, setRepEmoji] = useState("🌼");
-        
+    const repEmoji = useSelector((state: RootState) => {
+        return state.monthlyDataStat[0] ? state.monthlyDataStat[0].emoji : "🌼";
+    });
+
     return (
         <div>
             <DateEmojiContainer>
@@ -70,10 +72,10 @@ export default function Dates() {
 
                     <div style={{ marginLeft: 20, marginBottom: '-10' }}>
                         <ArrowBtn onClick={ () => dispatch(decMonth(1)) }>
-                            <IonIcon icon={ chevronBackOutline } size="large" color="primary" />
+                            <IonIcon icon={ chevronBackOutline } size="large" color="secondary" />
                         </ArrowBtn>
                         <ArrowBtn onClick={ () =>  dispatch(incMonth(1)) }>
-                            <IonIcon icon={ chevronForwardOutline } size="large" color="primary" />
+                            <IonIcon icon={ chevronForwardOutline } size="large" color="secondary" />
                         </ArrowBtn>
                     </div>
                 </DateContainer>

@@ -7,7 +7,7 @@ export default function useDarkMode(initValue: boolean) {
   
     const setMode = (mode: boolean) => {
       // local storage 접근 시 다른 로직을 추가적으로 이용하려면 따로 빼서 사용하는 게 좋음 
-      mode ? window.localStorage.setItem("isDark", true.toString()) : window.localStorage.setItem("isDark", false.toString()) 
+      mode ? window.localStorage.setItem("isDark", "true") : window.localStorage.setItem("isDark", "false") 
       setIsDark(mode);
       document.body.classList.toggle("dark");
     }
@@ -17,12 +17,12 @@ export default function useDarkMode(initValue: boolean) {
 
         if (localTheme !== null) {
           if (localTheme === 'true') { // to Dark Mode 
-            document.body.classList.contains("dark") ? "" : document.body.classList.toggle("dark");
+            document.body.classList.contains("dark") ? "" : document.body.classList.add("dark");
             setIsDark(true);
 
           } else {
             setIsDark(false);
-            document.body.classList.contains("dark") ? document.body.classList.toggle("dark") : "";
+            document.body.classList.contains("dark") ? document.body.classList.remove("dark") : "";
           }
         }
       }, []);

@@ -53,6 +53,9 @@ function CalendarList() {
       return state.date;
   });
 
+  const nowMonthNum = new Date().getMonth()+1;
+  const nowMonth = nowMonthNum > 9 ? nowMonthNum.toString() : "0" + nowMonthNum;
+
   const dataList = useSelector((state: RootState) => {
       return state.monthlyDataList;
   });
@@ -95,7 +98,7 @@ function CalendarList() {
         {
           dataList.map((e, i) => ( <CalendarItem data={e} key={i} 
             isValidDate={ e && e.date !== "" ? true : false } 
-            isToday={ !e ? false : ( e.date.substring(8, 10) === today ? true : false) }
+            isToday={ !e ? false : ( (e.date === year+"-"+nowMonth+"-"+today ) ? true : false) }
           /> ))
         }
     </CalendarContainer>

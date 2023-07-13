@@ -10,7 +10,9 @@ const CalendarSectionContainer = styled.div`
   min-width: 320px;
 `;
 
+
 export default function Calendar() {
+
   return (
     <CalendarSectionContainer>
       <Day/>
