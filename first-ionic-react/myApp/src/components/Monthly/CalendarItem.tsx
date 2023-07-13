@@ -16,7 +16,7 @@ function CalendarItem(props: { data: dailyData, isValidDate: boolean, isToday: b
   return (
     <div>
         <ItemBox onClick={() => console.log(props.data.date)} 
-          style={ props.isValidDate ? ( props.isToday ? { backgroundColor: "#fff" } : {} ) : { display: "none" }} >
+          style={ props.isValidDate ? ( props.isToday ? { backgroundColor: "#ffffff80" } : { backgroundColor: "#ffffff40" }) : { display: "none" }} >
           { props.data ? props.data.emoji : "" }
         </ItemBox>
     </div>

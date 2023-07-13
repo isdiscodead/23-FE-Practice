@@ -1,14 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export type dateData = {
-    today: Date
+    today: string
     year: string
     month: string
     day: string
 }
 
 const initialState: dateData = {
-    today: new Date(),
+    today: new Date().getDate().toString(),
     year: new Date().getFullYear().toString(),
     // month = 01 ~ 09, 10, 11, 12
     month: ( (new Date().getMonth()) > 8 ? (new Date().getMonth()+1)+"" : "0" + (new Date().getMonth()+1) ),
@@ -30,6 +30,7 @@ const dateSlice = createSlice({
                 state.month = "01";
                 state.year = ((Number(state.year)+1).toString());
             }
+            return state;
         },
 
         decMonth: (state, action) => {
@@ -39,6 +40,7 @@ const dateSlice = createSlice({
                 state.month = "12";
                 state.year = ((Number(state.year)-1).toString());
             }
+            return state;
         },
     },
 });

@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { styled } from 'styled-components'
 import { RootState } from '../../store/store';
 import { incMonth, decMonth } from '../../store/dateSlice';
+import { IonIcon } from '@ionic/react';
+import { chevronForwardOutline, chevronBackOutline } from 'ionicons/icons';
 
 const DateEmojiContainer = styled.div`
     display: flex;
@@ -38,12 +40,19 @@ const RepEmoji = styled.h1`
     align-self: flex-end;
 `
 
+const ArrowBtn = styled.button`
+    background-color: #8888;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-top: 18px;
+`;
+
 export default function Dates() {
 
-    const dispach = useDispatch();
+    const dispatch = useDispatch();
 
     const { today, month, year } = useSelector((state: RootState) => {
-    return state.date;
+        return state.date;
     });
 
     const [repEmoji, setRepEmoji] = useState("🌼");
@@ -59,13 +68,13 @@ export default function Dates() {
                         { year }
                     </Year>
 
-                    <div>
-                        <button onClick={ () => dispach(decMonth(1)) }>
-                            { "<" }
-                        </button>
-                        <button onClick={ () =>  dispach(incMonth(1)) }>
-                            { ">" }
-                        </button>
+                    <div style={{ marginLeft: 20, marginBottom: '-10' }}>
+                        <ArrowBtn onClick={ () => dispatch(decMonth(1)) }>
+                            <IonIcon icon={ chevronBackOutline } size="large" color="primary" />
+                        </ArrowBtn>
+                        <ArrowBtn onClick={ () =>  dispatch(incMonth(1)) }>
+                            <IonIcon icon={ chevronForwardOutline } size="large" color="primary" />
+                        </ArrowBtn>
                     </div>
                 </DateContainer>
                 <RepEmoji>

@@ -1,8 +1,6 @@
-import React from 'react'
 import Day from './Day'
 import CalendarList from './CalendarList'
 import { styled } from 'styled-components'
-import { useState } from 'react'
 
 const CalendarSectionContainer = styled.div`
   width: 100%;
