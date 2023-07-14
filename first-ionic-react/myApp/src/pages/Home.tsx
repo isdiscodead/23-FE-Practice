@@ -2,8 +2,9 @@ import { IonContent, IonPage, IonTitle, IonToolbar, IonMenu, IonMenuButton, IonB
 import './Home.css';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
-import Menu from '../components/Menu/Menu';
 import Monthly from '../components/Monthly/Monthly';
+import { AddBtn } from '../components/Add/AddBtn';
+import { AddModal } from '../components/Add/AddModal';
 
 const Home: React.FC = () => {
   return (
@@ -12,6 +13,8 @@ const Home: React.FC = () => {
         <Header />
         <IonContent class='ion-padding'>
           <Monthly />
+          <AddModal />
+          <AddBtn /> 
         </IonContent>
         <Footer />
       </IonPage>
