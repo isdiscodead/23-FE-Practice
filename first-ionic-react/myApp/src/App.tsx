@@ -31,15 +31,18 @@ import { ThemeContext } from './contexts/ThemeContext';
 import useDarkMode from './hooks/useDarkMode';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
-
+import { useState } from 'react';
+import { MainViewContext } from './contexts/MainViewContext';
 
 const App: React.FC = () => {
   const {isDark, setMode} = useDarkMode(false);
+  const [isMonthly, setIsMonthly] = useState(true);
 
   return (
     <Provider store={store} >
       <ThemeContext.Provider value={{ isDark, setMode }}>
-            <IonApp>
+      <MainViewContext.Provider value={{ isMonthly, setIsMonthly }}>
+        <IonApp>
           <IonReactRouter>
             <Menu />
             <IonRouterOutlet>
@@ -51,8 +54,8 @@ const App: React.FC = () => {
               </Route>
             </IonRouterOutlet>
           </IonReactRouter>
-        
-      </IonApp>
+        </IonApp>
+      </MainViewContext.Provider>
       </ThemeContext.Provider>
     </Provider>
   )
