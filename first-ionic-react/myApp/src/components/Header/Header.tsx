@@ -9,7 +9,7 @@ const StyledHeader = styled.div`
 
 export default function Header() {
   return (
-    <>
+    <div style={{ width: "100%" }}>
       <StyledHeader>
         <IonToolbar color={'secondary'}>
             <IonButtons slot="start">
@@ -18,6 +18,6 @@ export default function Header() {
             <IonTitle>🥳 DayMoji</IonTitle>
         </IonToolbar>
       </StyledHeader>
-    </>
+    </div>
   )
 }

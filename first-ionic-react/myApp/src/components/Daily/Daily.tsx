@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import { IonContent, IonItem, IonList, IonAvatar, IonLabel, IonInfiniteScroll, IonInfiniteScrollContent } from '@ionic/react';
 
 import '../../pages/Home.css';
-import styled from 'styled-components';
 import { dailyData } from '../Monthly/CalendarList';
 import { MonthDivder } from './MonthDivder';
 import { DailyItemCard } from './DailyItemCard';
@@ -37,6 +36,7 @@ export const Daily = () => {
           <DailyItemCard item={ item } key={item.date} />
         ))}
       </IonList>
+      
       <IonInfiniteScroll
         onIonInfinite={(ev) => {
           generateItems();

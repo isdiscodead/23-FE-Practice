@@ -1,5 +1,7 @@
 ion-toolbar {
     --background: '#F9F5F1';
+    width: 100%;
+    display: block;
 }
 
 ion-modal#example-modal {
@@ -22,4 +24,15 @@ ion-item {
     --background: --var(--ion-color-secondary);
     background: --var(--ion-color-secondary);
     --color: --var(--ion-color-secondary-contrast);
+}
+
+ion-content {
+    max-width: 640px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.ion-page {
+    display: flex;
+    align-items: center;
 }
