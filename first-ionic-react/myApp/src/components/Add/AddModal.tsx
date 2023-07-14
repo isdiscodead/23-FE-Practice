@@ -1,10 +1,11 @@
-import { useRef, useContext } from 'react'
+import { useRef, useContext, useState } from 'react'
 import { ThemeContext } from '../../contexts/ThemeContext';
 
 import styled from 'styled-components';
 import { IonModal, IonContent, IonToolbar, IonTitle, IonButtons, IonButton, IonList,
     IonItem, IonTextarea, IonText} from '@ionic/react'
-import '../../theme/modal.css';
+
+import '../../pages/Home.css';
 
 import EmojiPicker from 'emoji-picker-react';
 import { Theme } from 'emoji-picker-react';
@@ -12,6 +13,7 @@ import { Theme } from 'emoji-picker-react';
 export const AddModal = () => {
 
     const {isDark, setMode} = useContext(ThemeContext);
+    const [input, setInput] = useState("");
 
     const ModalContainer = styled.div`
         background-color: ${isDark ? "#626262" : "#fff"};

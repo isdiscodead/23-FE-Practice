@@ -27,12 +27,12 @@ setupIonicReact();
 
 
 // for context
-import { ThemeContext } from './contexts/ThemeContext';
-import useDarkMode from './hooks/useDarkMode';
-import { Provider } from 'react-redux';
-import { store } from './store/store';
 import { useState } from 'react';
+import { Provider } from 'react-redux';
+import { ThemeContext } from './contexts/ThemeContext';
 import { MainViewContext } from './contexts/MainViewContext';
+import useDarkMode from './hooks/useDarkMode';
+import { store } from './store/store';
 
 const App: React.FC = () => {
   const {isDark, setMode} = useDarkMode(false);

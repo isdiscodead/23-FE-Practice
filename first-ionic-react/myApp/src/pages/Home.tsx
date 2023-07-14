@@ -13,19 +13,20 @@ import { useContext } from 'react';
 import { MainViewContext } from '../contexts/MainViewContext';
 
 const Home: React.FC = () => {
-
   const {isMonthly, setIsMonthly} = useContext(MainViewContext);
 
   return (
     <>
       <IonPage id="main-content">
         <Header />
+
         <IonContent class='ion-padding'>
           { isMonthly ? <Monthly /> : <Daily /> }
 
           <AddModal />
           <AddBtn /> 
         </IonContent>
+
         <Footer />
       </IonPage>
     </>
