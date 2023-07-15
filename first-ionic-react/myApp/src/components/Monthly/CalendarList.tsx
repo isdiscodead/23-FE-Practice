@@ -62,7 +62,7 @@ function CalendarList() {
 
   // 기본 값 초기화
   useEffect(() => {
-    fetch('../src/data.json')
+    fetch(`https://c5cfc4c0-80f9-455a-842c-bacd08616bb9.mock.pstmn.io/api/month?month=${Number(month)}`)
     .then((res) => {
       return res.json();
     })
