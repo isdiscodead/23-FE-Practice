@@ -10,10 +10,18 @@ import '../../pages/Home.css';
 import EmojiPicker from 'emoji-picker-react';
 import { Theme } from 'emoji-picker-react';
 
+const TodayEmoji = styled.span`
+    font-size: 32px;
+    vertical-align: center;
+`
+
+
 export const AddModal = () => {
 
     const {isDark, setMode} = useContext(ThemeContext);
     const [input, setInput] = useState("");
+    const [emoji, setEmoji] = useState("");
+    
 
     const ModalContainer = styled.div`
         background-color: ${isDark ? "#626262" : "#fff"};
@@ -36,7 +44,7 @@ export const AddModal = () => {
         <IonModal id="example-modal" ref={modal} trigger="open-modal">
             <IonContent>
                 <IonToolbar>
-                    <IonTitle>기록하기</IonTitle>
+                    <IonTitle>기록하기 : </IonTitle>
                     <IonButtons slot="end">
                         <IonButton onClick={() => dismiss()}>
                             저장
@@ -50,11 +58,21 @@ export const AddModal = () => {
 
                 <ModalContainer>
                     <IonItem>
-                        <EmojiPicker onEmojiClick={(emoji, event)=>{}} width={500} height={350} theme={Theme.DARK} />
+                        <EmojiPicker onEmojiClick={(emoji, event)=>{
+                            setEmoji(emoji.emoji);
+                        }} 
+                        width={500} height={350} theme={ isDark ? Theme.DARK : Theme.LIGHT } 
+                        />
                     </IonItem>
                     <IonItem>
-                        <IonText>🌼</IonText>
-                        <IonTextarea placeholder='짧은 일기를 입력하세요.' />
+                        <TodayEmoji>{ emoji }</TodayEmoji>
+                        <IonTextarea 
+                            value={input}
+                            onIonChange={(e) => {
+                                setInput(e.target.value!);
+                            }}
+                            autofocus={true} placeholder='짧은 일기를 입력하세요.' 
+                        />
                     </IonItem>
                 </ModalContainer>
             </IonContent>
