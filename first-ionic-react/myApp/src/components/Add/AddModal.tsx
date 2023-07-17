@@ -1,11 +1,13 @@
 import { useRef, useContext, useState } from 'react'
 import { ThemeContext } from '../../contexts/ThemeContext';
 
+import '../../pages/Home.css';
 import styled from 'styled-components';
 import { IonModal, IonContent, IonToolbar, IonTitle, IonButtons, IonButton, IonList,
     IonItem, IonTextarea, IonText} from '@ionic/react'
 
-import '../../pages/Home.css';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store/store';
 
 import EmojiPicker from 'emoji-picker-react';
 import { Theme } from 'emoji-picker-react';
@@ -22,6 +24,9 @@ export const AddModal = () => {
     const [input, setInput] = useState("");
     const [emoji, setEmoji] = useState("");
     
+    const selectedDate = useSelector((state: RootState) => {
+        return state.selectedDate;
+      });
 
     const ModalContainer = styled.div`
         background-color: ${isDark ? "#626262" : "#fff"};
@@ -44,7 +49,7 @@ export const AddModal = () => {
         <IonModal id="example-modal" ref={modal} trigger="open-modal">
             <IonContent>
                 <IonToolbar>
-                    <IonTitle>기록하기 : </IonTitle>
+                    <IonTitle>기록하기 : { selectedDate.value }</IonTitle>
                     <IonButtons slot="end">
                         <IonButton onClick={() => dismiss()}>
                             저장
