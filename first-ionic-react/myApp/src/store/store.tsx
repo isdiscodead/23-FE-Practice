@@ -4,6 +4,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import monthlySlice from './monthlyDataListSlice';
 import dateSlice from './dateSlice';
 import monthlyDataStatSlice from './monthlyDataStatSlice';
+import selectedDateSlice from './selectedDateSlice';
 
 export const store = configureStore({
     // 사용할 reducer들을 모두 작성 ... reducers가 아님 !! 주의 !! 
@@ -11,6 +12,7 @@ export const store = configureStore({
         monthlyDataList: monthlySlice.reducer,
         date: dateSlice.reducer,
         monthlyDataStat: monthlyDataStatSlice.reducer,
+        selectedDate: selectedDateSlice.reducer,
     },
 });
 
