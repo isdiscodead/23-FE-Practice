@@ -9,7 +9,7 @@ import { IonModal, IonContent, IonToolbar, IonTitle, IonButtons, IonButton, IonL
 
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
-import { setModal } from '../../store/EditorModalSlice';
+import { setModal } from '../../store/editorModalSlice';
 
 import EmojiPicker from 'emoji-picker-react';
 import { Theme } from 'emoji-picker-react';
