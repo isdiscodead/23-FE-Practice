@@ -44,3 +44,7 @@ textarea {
     padding: 10px!important;
     margin: 10px!important;
 }
+
+ion-menu {
+    background: --var(--ion-color-secondary);
+}

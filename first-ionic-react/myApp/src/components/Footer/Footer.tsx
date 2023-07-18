@@ -11,7 +11,7 @@ export default function Footer() {
   return (
     <IonFooter>
         <IonToolbar color='secondary' >
-            <IonSegment value="month">
+            <IonSegment value={ isMonthly ? "month" : "one" } >
                 <IonSegmentButton value="month" onClick={ () => { setIsMonthly(true) } }>
                     <IonLabel> 📅 월별로 보기</IonLabel>
                 </IonSegmentButton>

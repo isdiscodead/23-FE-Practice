@@ -5,6 +5,7 @@ import monthlySlice from './monthlyDataListSlice';
 import dateSlice from './dateSlice';
 import monthlyDataStatSlice from './monthlyDataStatSlice';
 import selectedDateSlice from './selectedDateSlice';
+import editorModalSlice from './EditorModalSlice';
 
 export const store = configureStore({
     // 사용할 reducer들을 모두 작성 ... reducers가 아님 !! 주의 !! 
@@ -13,6 +14,7 @@ export const store = configureStore({
         date: dateSlice.reducer,
         monthlyDataStat: monthlyDataStatSlice.reducer,
         selectedDate: selectedDateSlice.reducer,
+        modalOpen: editorModalSlice.reducer,
     },
 });
 

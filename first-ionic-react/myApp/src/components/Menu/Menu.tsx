@@ -27,13 +27,13 @@ function Menu() {
                 <IonTitle>⚙️ 환경 설정</IonTitle>
             </IonToolbar>
 
-            <IonContent class="ion-padding">
+            <IonContent class="ion-padding" style={{ background: isDark ? "#333333" : "white" }}>
                 <TopBottomContainer> 
                     <div>
                         <MenuItem title="🌕 화면 모드" href=''>
                             <IonToggle checked={ isDark ? true : false } 
                                 onIonChange={ toggleDarkModeHandler } 
-                                labelPlacement="end" color="">Dark Theme</IonToggle>
+                                labelPlacement="end" color="primary">Dark Theme</IonToggle>
                         </MenuItem>
                         <MenuItem  title="🔐 로그인" href='' />
                         <MenuItem title="✈️ 고객센터 페이지" href='' />
