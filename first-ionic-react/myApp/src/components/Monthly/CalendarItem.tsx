@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { RootState } from '../../store/store';
 import { useSelector } from 'react-redux';
 import { setSelectedDate } from '../../store/selectedDateSlice';
-import { setModal } from '../../store/EditorModalSlice';
+import { setModal } from '../../store/editorModalSlice';
 
 const ItemBox = styled.button`
   border: 1px solid #C4C4C4;
