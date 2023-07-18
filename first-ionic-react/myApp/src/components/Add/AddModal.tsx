@@ -59,9 +59,8 @@ export const AddModal = () => {
         return role !== 'gesture';
     }
     
-
     return (
-        <IonModal canDismiss={canDismiss} id="example-modal" ref={ modal } trigger="open-modal" isOpen={isOpen}>
+        <IonModal backdrop-dismiss={false} canDismiss={canDismiss} id="example-modal" ref={ modal } trigger="open-modal" isOpen={isOpen}>
             <IonContent>
                 <IonToolbar color={"primary"}>
                     <IonTitle>기록하기 : { selectedDate.value }</IonTitle>
